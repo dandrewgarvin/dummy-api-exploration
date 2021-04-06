@@ -44,4 +44,4 @@ For each implementation (for to meet all the requirements listed above), the fol
 - [ ] remove `details` route from navbar
 - [ ] add copy to homepage (and update the [designs](./WIREFRAME.png))
 - [ ] add details page UI
-- [ ] start create feature branch for each graphql framework
+- [ ] start create feature branch for each graphql framework using [this api](https://www.mariouniversalis.fr/graphql/)
