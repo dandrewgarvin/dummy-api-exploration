@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dummy Api Exploration
 
-## Getting Started
+This repo is meant to explore possible solutions for an API layer used in GuideCX Applications.
 
-First, run the development server:
+Each solution can be found on a feature branch within this repo. Here are the current statuses of each networking solution:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+`Done`:
+- N/A
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`In Progress`:
+- N/A
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+`Not Started`:
+- Apollo client (control)
+- react-query
+- URQL
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Acceptance Criteria
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+There are a few things that should be explored with each implementation in order for the test to be considered a success;
 
-## Learn More
+- how does this solution handle state management/caching?
+- will this solution work when there are multiple client apps using it at the same time?
+- how does it handle "complicated" features? EG pagination, re-fetching, cache resolution
+- can we benefit from typescript types? EG codegen equivalent?
+- can we easily configure subscription-like features? EG PubNub, GQL Subscriptions, WebSockets, etc?
 
-To learn more about Next.js, take a look at the following resources:
+## Project Outline
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is a basic catalog for super mario games. As the test is not to build UI components, all of the UI has been done for all branches.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+For each implementation (for to meet all the requirements listed above), the following things should be built:
 
-## Deploy on Vercel
+- [ ] fetch paginated list of games
+- [ ] fetch from cache when re-visiting page
+- [ ] mutate local cache with game updates
+- [ ] access cache from multiple views
+- [ ] manually update cache from non-api source
+- [ ] use typesafe hooks in a clean, simple API
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## GroundWork To Do
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [ ] finish setting up typescript types
+- [ ] remove `details` route from navbar
+- [ ] add copy to homepage (and update the [designs](./WIREFRAME.png))
+- [ ] add details page UI
+- [ ] start create feature branch for each graphql framework
